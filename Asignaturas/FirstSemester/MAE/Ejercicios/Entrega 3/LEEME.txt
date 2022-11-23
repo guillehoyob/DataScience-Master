@@ -1,0 +1,7 @@
+Entrega Ejercicios 1, 4, 6 & 10
+
+Datos Geyser:
+https://matematicas.uam.es/~joser.berrendero/datos/Datos-geyser.txt
+
+Los otros datos:
+Creo que están en las diapositavas.
