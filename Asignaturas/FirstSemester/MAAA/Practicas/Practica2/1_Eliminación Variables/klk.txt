@@ -1,0 +1,5 @@
+Lo que tengo hecho del psy factor:
+  Es recorer la lista de las variables que no están contenidas en W o Z
+  Mirar para cada variable de esa lista a que factores afecta (si empiezas con la variable PI, pos está contenida en PI y PG_ID)
+  Lo multiplico y me hago un array que contenga este valor para cada Variable.
+  
