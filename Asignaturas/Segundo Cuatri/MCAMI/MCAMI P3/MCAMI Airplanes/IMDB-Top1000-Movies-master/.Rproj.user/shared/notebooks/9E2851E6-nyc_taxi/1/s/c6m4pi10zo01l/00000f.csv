@@ -1,0 +1,7 @@
+"0","# Individualizamos los Generos"
+"0","pei <- data.frame(table(str_split(df$Genre, "","", simplify = TRUE)))"
+"0","#pei"
+"0",""
+"0","# Limpiamos espacios en blanco"
+"0","pei <- pei[-c(1), ] "
+"0","pei"

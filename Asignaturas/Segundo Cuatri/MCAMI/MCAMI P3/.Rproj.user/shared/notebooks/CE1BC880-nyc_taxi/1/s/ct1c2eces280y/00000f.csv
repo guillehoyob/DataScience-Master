@@ -1,0 +1,17 @@
+"0","
+pickup_lonlat <- data.frame(x=df$pickup_longitude, y=df$pickup_latitude)
+plot_pickup <- ggplot(pickup_lonlat) + stat_binhex(aes(x=x, y=y), bins=300) +
+                                        scale_fill_gradientn(colours=c(""black"",""green""))
+
+dropoff_lonlat <- data.frame(x=df$dropoff_longitude, y=df$dropoff_latitude)
+plot_dropoff <- ggplot(dropoff_lonlat) + stat_binhex(aes(x=x, y=y), bins=300) + 
+                                         scale_fill_gradientn(colours=c(""black"",""green""))
+
+plot_grid(plot_pickup, plot_dropoff, labels = c('Pickup', 'Dropoff'))
+"
+"2","Warning:"
+"2"," Removed 8357 rows containing non-finite values (stat_binhex).
+"
+"2","Warning:"
+"2"," Removed 8738 rows containing non-finite values (stat_binhex).
+"

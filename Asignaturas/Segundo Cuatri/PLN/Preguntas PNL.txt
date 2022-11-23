@@ -1,0 +1,20 @@
+Describe brevemente las grandes fases históricas por las que ha pasado el PLN.
+Define modelo del lenguaje y argumenta algunas de sus aplicaciones en PLN.
+Define modelo del lenguaje probabilístico y describe en qué consiste el modelo del lenguaje basado en N-gramas.
+Define la tarea de POS tagging, da ejemplos de etiquetas POS, y compara los porcentajes de acierto alcanzados por diferentes aproximaciones.
+Explica cómo se representa el POS tagging como un Modelo oculto de Markov (Hidden Markov Model).
+Define, relaciona y compara brevemente constituency parsing y dependency parsing.
+Describe cuál es el objetivo del constituency parsing, bases de su funcionamiento y tipo de tareas para las que puede ser de utilidad.
+Describe el problema de la ambigüedad en constituency parsing, qué consecuencias tiene y cómo se puede enfrentar el problema.
+Define, relaciona y compara brevemente aproximaciones basadas en transiciones y aproximaciones basadas en grafos de dependency parsing.
+Describe brevemente la arquitectura y funcionamiento generales de un dependency parser basado en transiciones.
+Describe las distintas relaciones entre palabras. ¿Cuál de ellas están incluidas en WordNet?
+Describe en qué consiste la "hipótesis distribucional" de las palabras y su aplicación para representar significados.
+Describe en qué consiste las "semánticas de vector" (vector semantics), sus objetivos y los tipos de embeddings que se usan actualmente.
+Describe el principio de funcionamiento del Word2Vec y el Skip-Gram model.
+Explica en qué consiste la extracción de información en PLN, mencionando sus principales tareas.
+Da ejemplos de bases de conocimiento que se usan en PLN, explicando brevemente cómo se pueden usar en tareas de extracción de información.
+Describe la cadena de procesamiento (pipeline) de la clasificación de texto, explicando cada una de sus fases.
+Describe en qué consiste el Análisis Discriminante Lineal (LDA) y sus objetivos.
+Describe en qué consiste el método de Naïve Bayes para la clasificación de textos, las presunciones y simplificaciones en las que se basa, y sus posibles optimizaciones para la minería de opiniones.
+Describe qué se entiende por análisis de emociones y los distintos modelos que existen para implementarlo.

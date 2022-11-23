@@ -1,0 +1,4 @@
+"0",""
+"0","# Añadimos columna identificativa"
+"0","pei2 <- cbind(pei2, Id=c('2006'))"
+"0","pei2"

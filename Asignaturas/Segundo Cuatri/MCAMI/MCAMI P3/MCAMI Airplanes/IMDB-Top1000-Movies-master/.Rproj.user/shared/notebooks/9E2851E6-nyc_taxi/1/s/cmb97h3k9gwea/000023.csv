@@ -1,0 +1,4 @@
+"0","# Generamos los datos individuales de los generos producidos "
+"0","pei2 <- data.frame(table(str_split(dosmilseis$Genre, "","", simplify = TRUE)))"
+"0","pei3 <- data.frame(table(str_split(dosmildiezyseis$Genre, "","", simplify = TRUE)))"
+"0","pei2"

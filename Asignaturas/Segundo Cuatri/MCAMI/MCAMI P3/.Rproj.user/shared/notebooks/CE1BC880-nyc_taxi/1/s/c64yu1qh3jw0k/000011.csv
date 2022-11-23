@@ -1,0 +1,10 @@
+"0","plot1 <- ggplot(trips_manh_jfk, aes(trip_time_in_secs/60)) + stat_ecdf()
+plot2 <- ggplot(trips_manh_jfk, aes(trip_time_in_secs/60)) + geom_histogram(bins = 35)
+plot_grid(plot1, plot2, labels= c(""edcd"", ""hist""))
+"
+"2","Warning:"
+"2"," Removed 18 rows containing non-finite values (stat_ecdf).
+"
+"2","Warning:"
+"2"," Removed 18 rows containing non-finite values (stat_bin).
+"

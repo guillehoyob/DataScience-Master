@@ -1,0 +1,11 @@
+"0","print(""Velocidad media conducida"")
+"
+"1","[1]"
+"1"," ""Velocidad media conducida"""
+"1","
+"
+"0","mean(table(df$trip_distance/df$trip_time_in_secs))"
+"1","[1]"
+"1"," 7.768255"
+"1","
+"

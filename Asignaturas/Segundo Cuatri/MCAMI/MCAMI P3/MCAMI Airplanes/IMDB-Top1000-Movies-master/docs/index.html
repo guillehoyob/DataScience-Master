@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" href="assets/images/imdb.png" type="image/png">
+    <title>IMDB Top 1000 Movies</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb"
+        crossorigin="anonymous">
+
+    <!-- Fullpage.js -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.5/jquery.fullpage.min.css" integrity="sha256-MWBJX/7o3UIX5sMN/izdthod08WoIcWN0HOP7/X8+48="
+        crossorigin="anonymous" />
+
+    <!-- Font-awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- hover.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.1.1/css/hover-min.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+
+</head>
+
+<body>
+    <div id="fullpage">
+        <div class="section text-center" id="dataset">
+            <h1>IMDB Top1000 Movies</h1>
+            <br>
+            <p style="font-size: 24px;">โปรเจคนี้เป็นส่วนหนึ่งของวิชา Problem Solving in Information Technology</p>
+            <p style="font-size: 24px;">คณะเทคโนโลยีสารสนเทศ สถาบันเทคโนโลยีพระจอมเกล้าเจ้าคุณทหารลาดกระบัง</p>
+        </div>
+        <div class="section text-center" id="dataset">
+            <h1>Dataset</h1>
+            <h2>IMDB data จากเว็บ
+                <a href="https://www.kaggle.com/PromptCloudHQ/imdb-data/data">Kaggle</a>
+            </h2>
+            <h3>ภาพยนตร์ยอดนิยม 1000 เรื่อง (2006-2016)</h3>
+        </div>
+
+        <!--ประเภทของภาพยนตร์-->
+        <div class="section chart-content">
+            <div class="row">
+                <div class="col-sm-12 text-center">
+                    <h1 class="content-title">ประเภทของหนังตั้งแต่ปี 2006 - 2016</h1>
+                    <br />
+                </div>
+            </div>
+            <div class="row content">
+                <div class="col-lg-7 col-xl-7 chart-svg">
+                    <embed type="image/svg+xml" src="assets/images/genre_graph.svg" class="img-fluid" />
+                </div>
+                <div class="col-lg-5 col-xl-5">
+                    <p class="lead">
+                        <strong><i class="fa fa-bar-chart" style="font-size: 26px;">&nbsp; ภาพยนตร์หนึ่งเรื่องอาจมีได้หลายประเภท </i></strong><br></p>
+                            <p class="lead">พวกเราพบว่าภาพยนตร์ประเภทดราม่านั้นได้รับความนิยมมากที่สุด ภาพยนตร์ดราม่ามักจะเน้นการนำเสนอเกี่ยวกับด้านอารมณ์ ปัญหาชีวิตของตัวละคร  อาจจะดราม่าทั้งเรื่องหรือดราม่าแค่ส่วนหนึ่งก็ได้ที่ผู้คนชอบเป็นอันดับหนึ่งอาจเป็นเพราะภาพยนตร์ดราม่าบางเรื่องอาจจะมีเนื้อเรื่องที่ตรงกับชีวิตของผู้ชมหลายๆคนและภาพยนตร์ดราม่าบางเรื่องสร้างจากเรื่องจริงจึงทําให้ภาพยนตร์ประเภทดราม่าได้รับความนิยมมากที่สุด
+                            <p class="lead">สามารถดูกราฟแบ่งแยกประเภทตามแต่ละปีที่ลิ้งด้านล่างนี้
+                            <br><br><i class="fa fa-hand-o-right"></i><a href="page.html"> โปรดคลิกที่นี่</a> <br></p>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!--Rating 2006-2016 -->
+        <div class="section chart-content">
+            <div class="row">
+                <div class="col-sm-12 text-center">
+                    <h1 class="content-title">Rating เฉลี่ยของภาพยนตร์แต่ละประเภทรวมทุกปี (2006-2016)</h1>
+                    <br />
+                </div>
+            </div>
+            <div class="row content">
+                <div class="col-lg-7 col-xl-7 chart-svg">
+                    <embed type="image/svg+xml" src="assets/images/rating.svg" class="img-fluid" />
+                </div>
+                <div class="col-lg-5 col-xl-5">
+                    <p class="lead">
+                        เราพบว่าภาพยนตร์ที่ได้ Rating เฉลี่ยดีที่สุดคือภาพยนตร์ประเภทสงครามรองลงมาคืออนิเมชั่น ชีวประวัติ ประวัติศาสตร์ อาจเป็นเพราะหนังประเภทจําพวกนี้นอกจากให้ความสนุกแล้วยังให้ความรู้เพิ่มเติมอีกด้วย
+                    </p>
+                </div>
+            </div>
+        </div>
+
+            <!--Vote 2006-2016 -->
+            <div class="section chart-content">
+                <div class="row">
+                    <div class="col-sm-12 text-center">
+                        <h1 class="content-title">ผล Vote รวมของภาพยนตร์แต่ละประเภท (2006-2016)</h1>
+                        <br />
+                    </div>
+                </div>
+                <div class="row content">
+                    <div class="col-lg-7 col-xl-7 chart-svg">
+                        <embed type="image/svg+xml" src="assets/images/vote.svg" class="img-fluid" />
+                    </div>
+                    <div class="col-lg-5 col-xl-5">
+                        <p class="lead">
+                            จากการสำรวจผล Vote ที่คนนิยมโหวตกันนั้นจะเห็นได้จากกราฟว่า "ภาพยนตร์แนว ดราม่า" มีคนนิยมโหวตกันมากกว่า <u>70,000,000</u> โหวต
+                                และตามมาติดๆคือแอ็คชั่น แอดเวนเจอร์ ก่อนจะทิ้งห่างเป็น คอมเมดี้ ตามลําดับ <br>
+                        </p>
+                        <p class="lead">สามารถดูกราฟแบ่งแยกผลโหวตตามแต่ละปีที่ลิ้งด้านล่างนี้
+                        <br><br><i class="fa fa-hand-o-right"></i><a href="vote.html"> โปรดคลิกที่นี่</a><br></p>
+                    </div>
+                </div>
+            </div>
+
+                <!--Runtime Movies-->
+                <div class="section chart-content">
+                    <div class="row">
+                        <div class="col-sm-12 text-center">
+                            <h1 class="content-title">ความยาวเฉลี่ยของภาพยนตร์ในแต่ละประเภท (2006-2016) </h1>
+                            <br />
+                        </div>
+                    </div>
+                    <div class="row content">
+                        <div class="col-lg-7 col-xl-7 chart-svg">
+                            <embed type="image/svg+xml" src="assets/images/runtime.svg" class="img-fluid" />
+                        </div>
+                        <div class="col-lg-5 col-xl-5">
+                            <p class="lead">
+                            ภาพยนตร์ประเภท อนิเมชั่น มีค่าเฉลี่ยความยาวภาพยนตร์น้อยที่สุด เพราะว่าอาจจะใช้ต้นทุนในการสร้างเยอะ ค่าจ้างพนักงานทำกราฟฟิก ทำอนิเมชั่น คนตัดต่อ จึงจําเป็นต้องใช้ต้นทุนในการสร้างสูงมากๆเมื่อเทียบกับหนังประเภทอื่นๆกลับกันกับภาพยนตร์ประเภทคาวบอยมีค่าเฉลี่ยความยาวภาพยนตร์มากที่สุดอาจจะเป็นเพราะหนังคาวบอยมีการเล่าเรื่องวัฒนธรรมของสมัยนั้นๆจึงทําให้ยาวกว่าหนังประเภทอื่นๆ
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!--Director-->
+                <div class="section chart-content">
+                        <div class="row">
+                            <div class="col-sm-12 text-center">
+                                <h1 class="content-title">ผู้กํากับที่กํากับภาพยนตร์ยอดนิยมทั้งหมดตั้งแต่ปี 2006 - 2016</h1>
+                                <br />
+                            </div>
+                        </div>
+                        <div class="row content">
+                            <div class="col-lg-7 col-xl-7 chart-svg">
+                                <embed type="image/svg+xml" src="assets/images/Director.svg" class="img-fluid" />
+                            </div>
+                            <div class="col-lg-5 col-xl-5">
+                                <p class="lead">
+                                เราพบว่าผู้กํากับที่กํากับหนังยอดนิยมมากที่สุดคือผู้กำกับชื่อ Ridley Scott ที่เราคุ้นเคยกันดีจากหนังซีรีย์ชื่อดังอย่าง Alien และหนังดังอีกมากมายเช่น The Gradiator, Bladerunner, The Martian เป็นต้น จึงไม่น่าแปลกใจเลยว่าทําไมผู้กํากับ Ridley Scott จึงได้กํากับหนังยอดนิยมไปถึง 8 เรื่อง </p>
+                            </div>
+                        </div>
+                    </div>
+
+        <!--รายได้ของภาพยนตร์ แต่ละปี-->
+        <div class="section chart-content">
+                <div class="row">
+                    <div class="col-sm-12 text-center">
+                        <h1 class="content-title">รายได้ของภาพยนตร์แต่ละประเภท [แต่ละปี]</h1>
+                        <br />
+                    </div>
+                </div>
+                <div class="row content">
+                    <div class="col-lg-7 col-xl-7 chart-svg">
+                        <embed type="image/svg+xml" src="assets/images/genre_price_each_years.svg" class="img-fluid" />
+                    </div>
+                    <div class="col-lg-5 col-xl-5">
+                        <p class="lead">
+                        เราสามารถเห็นการเติบโตของรายได้ของภาพยนตร์ประเภทต่างๆที่เพิ่มและลดในแต่ละปี
+                        </p>
+                        <p class="lead">
+                        สามารถดูกราฟรายได้ตามแต่ละปีที่ลิ้งด้านล่างนี้
+                        <br><br><i class="fa fa-hand-o-right"></i><a href="price_all.html"> โปรดคลิกที่นี่</a><br></p>
+                    </div>
+                </div>
+            </div>
+
+         <!--รายได้ของภาพยนตร์ ทุกปี-->
+         <div class="section chart-content">
+                <div class="row">
+                    <div class="col-sm-12 text-center">
+                        <h1 class="content-title">รายได้ของภาพยนตร์แต่ละประเภท [รวมทุกปี] </h1>
+                        <br />
+                    </div>
+                </div>
+                <div class="row content">
+                    <div class="col-lg-7 col-xl-7 chart-svg">
+                        <embed type="image/svg+xml" src="assets/images/genre_price_all.svg" class="img-fluid" />
+                    </div>
+                    <div class="col-lg-5 col-xl-5">
+                        <p class="lead">
+                        จากกราฟภาพยนตร์ประเภทดรามา่านํามาเป็นอันดับหนึ่งซึ่งจากกราฟผลโหวตภาพยนตร์ดราม่าได้รับการโหวตเป็นอันดับหนึ่งและเรตติ้งได้เป็นอันดับเจ็ด ตามมาด้วยแอ็คชั่นและคอมเมดี้ที่แทบจะทํารายได้เท่ากันซึ่งแอ็คชั่นได้รับผลโหวตเป็นอันดับสองคอมเมดี้ได้รับผลโหวตเป็นอันดับสี่ซึ่งจากกราฟเรตติ้งและผลโหวตเมื่อนํามาเทียบกับกราฟรายได้เราเห็นว่าภาพยนตร์ที่ได้รับการโหวตและเรตติ้งสูงมักจะทํารายได้ได้สูงกว่าหนังประเภทที่ได้รับการโหวตและเรตติ้งตํ่ากว่าเราจึงอาจสรุปได้ว่าผลโหวตและเรตติ้งของหนังมีผลต่อรายได้ของหนังของแต่ละประเภท<br>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+        <!--wordcloud-->
+        <div class="section chart-content">
+            <div class="row">
+                <div class="col-sm-12 text-center">
+                    <h1 class="content-title">คําภาษาอังกฤษที่ถูกใช้มากที่สุดในภาพยนตร์ยอดนิยม (2006-2016)</h1>
+                    <br />
+                </div>
+            </div>
+            <div class="row content">
+                <div class="col-lg-7 col-xl-7 chart-svg">
+                    <center><img src="assets/images/all.png" class="img-fluid" width="450" height="450"></center>
+                </div>
+                <div class="col-lg-5 col-xl-5">
+                    <p class="lead">
+                    เราพบว่ามีหลายคําที่เกี่ยวข้องกับชีวิตไม่ว่าจะเป็นคําว่า life, world หรือเกี่ยวกับเพศเช่น man, women เป็นต้นอาจเป็นเพราะว่าในหนังยอดนิยมจาก1000เรื่องหนังประเภทดราม่ามีมากที่สุด รวมทั้งยังมีคําว่า comedy, friend ที่น่าจะมาจากหนังประเภทคอมเมดี้ติดมาด้วย เราอาจจะสรุปได้ว่าคําที่ถูกใช้มากที่สุดมักจะเป็นคําที่เกี่ยวกับประเภทของหนังที่ได้รับความนิยมมากที่สุด
+                    <br><br>
+                    <div class="gallery">
+                        <a href="assets/images/more50.png" target="_blank">
+                        <img src="assets/images/more50.png" alt="More50" width="400" height="300">
+                    <div class="desc">คำที่ใช้<u style="font-size: 23px;">มากที่สุด</u>ในภาพยนตร์ที่ทำรายได้มากกว่ากว่า <br> 50 ล้าน</div>
+                    </a>
+                    </div> &nbsp;
+                    <div class="gallery">
+                            <a href="assets/images/less50.png" target="_blank">
+                            <img src="assets/images/less50.png" alt="Less50" width="400" height="300">
+                        <div class="desc">คำที่ใช้<u style="font-size: 23px;">น้อยที่สุด</u>ในภาพยนตร์ที่ทำรายได้น้อยกว่ากว่า <br> 50 ล้าน</div>
+                        </a>
+                        </div>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+        <!--Tools-->
+        <div class="section section-tools">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 text-center">
+                        <h1 class="section-heading text-uppercase">เครื่องมือ</h1>
+                        <h3 class="section-subheading text-muted">เครื่องมือสุดเจ๋งที่พวกเราเลือกใช้ :)</h3>
+                    </div>
+                </div>
+                <div class="row text-center" style="margin-top: 1em;">
+                    <div class="col-sm-4">
+                        <span class="fa-stack fa-4x hvr-bob">
+                            <a href="https://github.com" target="_blank">
+                                <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </a>
+                        </span>
+                        <h4 class="service-heading">GitHub</h4>
+                        <p class="text-muted">สําหรับทําโครงงานเป็นกลุ่ม</p>
+                    </div>
+                    <div class="col-sm-4">
+                        <span class="fa-stack fa-4x hvr-bob">
+                            <a href="https://www.python.org" target="_blank">
+                                <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                                <i class="fa fa-file-text-o fa-stack-1x fa-inverse"></i>
+                            </a>
+                        </span>
+                        <h4 class="service-heading">Python</h4>
+                        <p class="text-muted">ภาษาโปรแกรมมิ่งที่ใช้เป็นหลัก</p>
+                    </div>
+                    <div class="col-sm-4">
+                        <span class="fa-stack fa-4x hvr-bob">
+                            <a href="http://www.numpy.org" target="_blank">
+                                <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                                <i class="fa fa-superscript fa-stack-1x fa-inverse"></i>
+                            </a>
+                        </span>
+                        <h4 class="service-heading">Numpy</h4>
+                        <p class="text-muted">หนึ่งใน library ของภาษา python</p>
+                    </div>
+                    <div class="col-sm-4">
+                        <span class="fa-stack fa-4x hvr-bob">
+                            <a href="https://pandas.pydata.org" target="_blank">
+                                <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                                <i class="fa fa-table fa-stack-1x fa-inverse"></i>
+                            </a>
+                        </span>
+                        <h4 class="service-heading">Pandas</h4>
+                        <p class="text-muted">หนึ่งใน library ของภาษา python</p>
+                    </div>
+                    <div class="col-sm-4">
+                        <span class="fa-stack fa-4x hvr-bob">
+                            <a href="http://pygal.org/en/stable" target="_blank">
+                                <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                                <i class="fa fa-bar-chart fa-stack-1x fa-inverse"></i>
+                            </a>
+                        </span>
+                        <h4 class="service-heading">Pygal</h4>
+                        <p class="text-muted">หนึ่งใน library ของภาษา python ใช้ในการสร้างกราฟ</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="section section-tools">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 text-center">
+                        <h2 class="section-heading text-uppercase">ทีมของพวกเรา</h2>
+                    </div>
+                </div>
+                <div class="row" style="margin-top: 1em;">
+                    <div class="col-sm-4">
+                        <div class="team-member">
+                            <img class="img-fluid rounded-circle hvr-rotate" src="assets/team/01.jpg" alt="">
+                            <h4>ศรัณย์ ยันตะบุษย์</h4>
+                            <p class="text-muted">61070218</p>
+                            <ul class="list-inline social-buttons">
+                                <li class="list-inline-item">
+                                    <a href="https://www.facebook.com/CoFfEnRe" target="_blank" class="hvr-grow">
+                                        <i class="fa fa-facebook"></i>
+                                    </a>
+                                </li>
+                                <li class="list-inline-item">
+                                    <a href="https://github.com/peetck" target="_blank" class="hvr-grow">
+                                        <i class="fa fa-github"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="team-member">
+                            <img class="mx-auto rounded-circle hvr-rotate" src="assets/team/02.jpg" alt="">
+                            <h4>ศิรวิทย์ ยอดจิตร</h4>
+                            <p class="text-muted">61070221</p>
+                            <ul class="list-inline social-buttons">
+                                <li class="list-inline-item">
+                                    <a href="https://www.facebook.com/nest.backlast" target="_blank" class="hvr-grow">
+                                        <i class="fa fa-facebook"></i>
+                                    </a>
+                                </li>
+                                <li class="list-inline-item">
+                                    <a href="https://github.com/blackjokerrr" target="_blank" class="hvr-grow">
+                                        <i class="fa fa-github"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="team-member">
+                            <img class="mx-auto rounded-circle hvr-rotate" src="assets/team/03.jpg" alt="">
+                            <h4>กฤษฎาภา ง่วนจร</h4>
+                            <p class="text-muted">61070006</p>
+                            <ul class="list-inline social-buttons">
+                                <li class="list-inline-item">
+                                    <a href="https://www.facebook.com/pm02yu" target="_blank" class="hvr-grow">
+                                        <i class="fa fa-facebook"></i>
+                                    </a>
+                                </li>
+                                <li class="list-inline-item">
+                                    <a href="https://github.com/KISSADAPA" target="_blank" class="hvr-grow">
+                                        <i class="fa fa-github"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="team-member">
+                            <img class="mx-auto rounded-circle hvr-rotate" src="assets/team/04.jpg" alt="">
+                            <h4>วรภัทร ภัทรเมธาวรกุล</h4>
+                            <p class="text-muted">61070199</p>
+                            <ul class="list-inline social-buttons">
+                                <li class="list-inline-item">
+                                    <a href="https://www.facebook.com/worapat.phatarametravorakul" target="_blank" class="hvr-grow">
+                                        <i class="fa fa-facebook"></i>
+                                    </a>
+                                </li>
+                                <li class="list-inline-item">
+                                    <a href="https://github.com/thangmo29" target="_blank" class="hvr-grow">
+                                        <i class="fa fa-github"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+
+
+    <!-- JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.5/jquery.fullpage.min.js" integrity="sha256-SwWHEBZICAfuD82HWp9i1VmxX0dXjllMm6cNKvucHAY="
+        crossorigin="anonymous"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#fullpage').fullpage({
+
+                navigation: true,
+                slidesNavigation: true,
+                lockAnchors: true,
+
+                controlArrows: true,
+
+                lazyLoading: true,
+
+                paddingTop: '2em',
+                paddingBottom: '0.5em',
+
+            });
+        });
+    </script>
+</body>
+
+</html>

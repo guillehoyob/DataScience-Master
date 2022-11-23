@@ -1,0 +1,4 @@
+"0",""
+"0","# Limpiamos espacios en blanco y columnas únicas"
+"0","pei2 <- pei2[-c(1), ] "
+"0","pei2"

@@ -1,0 +1,13 @@
+"0","daytime_plot <- ggplot(daytime) + stat_binhex(aes(x=pickup_longitude, y=pickup_latitude), bins=300) + 
+                                         scale_fill_gradientn(colours=c(""gray"",""black""))
+nighttime_plot <- ggplot(nighttime) + stat_binhex(aes(x=pickup_longitude, y=pickup_latitude), bins=300) + 
+                                         scale_fill_gradientn(colours=c(""gray"",""black""))
+
+plot_grid(daytime_plot, nighttime_plot, labels = c(""day"", ""night""))
+"
+"2","Warning:"
+"2"," Removed 6124 rows containing non-finite values (stat_binhex).
+"
+"2","Warning:"
+"2"," Removed 2233 rows containing non-finite values (stat_binhex).
+"

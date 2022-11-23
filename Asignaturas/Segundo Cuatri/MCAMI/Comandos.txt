@@ -1,0 +1,7 @@
+esphome dashboard config/
+
+http://localhost:6052/
+
+
+https://smelpro.com/blog/esp8266-webserver-dht11/
+

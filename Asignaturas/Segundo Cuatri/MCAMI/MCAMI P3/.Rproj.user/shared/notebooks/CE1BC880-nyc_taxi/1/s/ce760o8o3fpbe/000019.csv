@@ -1,0 +1,54 @@
+"0","# Comprobar valores Nan"
+"0","which(is.na(df$medallion))"
+"1","integer(0)
+"
+"0","which(is.na(df$hack_license))"
+"1","integer(0)
+"
+"0","which(is.na(df$vendor_id))"
+"1","integer(0)
+"
+"0","which(is.na(df$rate_code))"
+"1","integer(0)
+"
+"0","which(is.na(df$pickup_datetime))"
+"1","integer(0)
+"
+"0","which(is.na(df$dropoff_datetime))"
+"1","integer(0)
+"
+"0","which(is.na(df$passenger_count))"
+"1","integer(0)
+"
+"0","which(is.na(df$trip_time_in_secs))"
+"1","integer(0)
+"
+"0","which(is.na(df$trip_distance))"
+"1","integer(0)
+"
+"0","which(is.na(df$pickup_longitude))"
+"1","integer(0)
+"
+"0","which(is.na(df$pickup_latitude))"
+"1","integer(0)
+"
+"0","which(is.na(df$dropoff_latitude))"
+"1","[1]"
+"1","   7162"
+"1"," 315773"
+"1"," 346847"
+"1"," 349989"
+"1"," 438519"
+"1","
+"
+"0","which(is.na(df$dropoff_longitude))"
+"1","[1]"
+"1","   7162"
+"1"," 315773"
+"1"," 346847"
+"1"," 349989"
+"1"," 438519"
+"1","
+"
+"0","# Imprimir Dataset"
+"0","print(df)"

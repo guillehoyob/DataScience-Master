@@ -1,0 +1,342 @@
+MAE - Métodos Avanzados en Estadística
+
+Recopilación de código R en los temas
+
+#--------------------------------------------------------------------------------------------------------------------
+#----- T - E - M - A : 0 ----------------------------------------------------------------------------------------
+#--------------------------------------------------------------------------------------------------------------------
+Tema 0:
+
+```{r}
+library(tidyverse)
+# P(Z > 1)
+1 - pnorm(1)
+
+# P(X > x) = 0.3
+qnorm(0.7)
+
+# Mediana de exponencial de media 2
+qexp(0.5, rate=0.5)
+
+# Números aleatorios
+x <- rnorm(100)
+x
+
+df <- data.frame(x=x)
+ggplot(df) + 
+  geom_histogram(aes(x=x, y=..density..),
+                 col='black', fill='lightblue', bins=20) +
+  geom_function(fun = dnorm, col='black', size=1.3)
+```
+
+
+#--------------------------------------------------------------------------------------------------------------------
+Tema 0: Ejemplo distribución uniforme diap 34
+
+```{r}
+# Parámetros --------------------------------------------------------------
+theta <- 10  # valor verdadero del parámetro
+n <- 20   # tamaño muestral
+m <- 1000 # número de muestras
+
+# Genera los datos --------------------------------------------------------
+set.seed(1234)   # para reproducir los resultados
+muestras <- matrix(runif(n*m, 0, theta), n)
+
+# Calcula estimadores ----------------------------------------------------- 
+emv <- apply(muestras, 2, max)
+momentos <- 2*apply(muestras, 2, mean)
+metodo <- gl(2, m, labels = c('emv', 'momentos'))
+df <- data.frame(estimadores = c(emv, momentos), metodo = metodo)
+
+# Gráficos ----------------------------------------------------------------
+cajas <- ggplot(df) +
+  geom_boxplot(aes(x = metodo, y = estimadores)) +
+  geom_hline(yintercept = theta, col = 'red', size = 1.1, linetype = 2)
+densidades <- ggplot(df) +
+  geom_density(aes(x = estimadores, linetype = metodo), size = 1.1) +
+  geom_vline(xintercept = theta, col = 'red', size = 1.1, linetype = 2)
+cajas + densidades
+```
+
+#--------------------------------------------------------------------------------------------------------------------
+#----- T - E - M - A : 1 ----------------------------------------------------------------------------------------
+#--------------------------------------------------------------------------------------------------------------------
+Tema 1: Boostrap - Contraste Kolmogorov-Smirnov
+
+```{r}
+set.seed(100)
+n <- 100
+x <- rnorm(n)
+x
+
+ks.test(x, "pnorm") # H0 verdadera
+## 
+##     One-sample Kolmogorov-Smirnov test
+## 
+## data:  x
+## D = 0.073373, p-value = 0.6546
+## alternative hypothesis: two-sided
+
+
+# -------- RESPUESTA --------------
+# H0 Es Aceptada o Verdadera Porque:
+
+# D   = Pequeña -> D Tiende a 0
+# p-v = Grande??
+
+#--------------------------------------------------------------------------------------------------------------------
+
+## alternative hypothesis: two-sided
+x <- rchisq(n, 2)
+ks.test(x,"pexp") # H0 falsa
+## 
+##     One-sample Kolmogorov-Smirnov test
+## 
+## data:  x
+## D = 0.25824, p-value = 3.226e-06
+## alternative hypothesis: two-sided
+
+
+# -------- RESPUESTA --------------
+# H0 Es Rechazada o Falsa Porque:
+
+# D   = Grande -> No tiende a 0
+# p-v = Pequeño??
+
+```
+
+
+#--------------------------------------------------------------------------------------------------------------------
+Tema 1: Distribución bajo la nula
+
+```{r}
+R <- 2000
+n <- 100
+ks_norm <- replicate(R, ks.test(rnorm(n), "pnorm")$statistic)
+ks_exp <- replicate(R, ks.test(rexp(n), "pexp")$statistic)
+distribucion <- gl(2, R, labels = c("Normal", "Exponencial"))
+df <- data.frame(ks = c(ks_norm, ks_exp), distribucion = distribucion)
+ggplot(df) +
+  geom_density(aes(x = ks, y = ..density.., linetype = distribucion), size = 1.1)
+
+```
+
+
+#--------------------------------------------------------------------------------------------------------------------
+Tema 1: Ejemplo: la varianza de la mediana
+
+```{r}
+set.seed(100)
+# Parámetros
+R <- 1000
+n <- 30
+theta <- 1
+# Generamos los datos
+muestra_original <- rt(n, 1) + theta   # Cauchy con theta = 0 coincide con t Student con 1 gl
+mediana_original <- median(muestra_original)
+# Generamos las remuestras (matriz n x R, cada columna una remuestra)
+muestras_bootstrap <- sample(muestra_original, n*R, rep = TRUE)
+muestras_bootstrap <- matrix(muestras_bootstrap, nrow = n)
+# Medianas de las remuestras
+medianas_bootstrap <- apply(muestras_bootstrap, 2, median)
+# Histograma de las medianas bootstrap
+df <- data.frame(medianas_bootstrap = medianas_bootstrap)
+ggplot(df) +
+  geom_histogram(aes(x = medianas_bootstrap, y = ..density..),
+                 bins = 10, fill = 'olivedrab4', col = 'black') +
+  geom_vline(xintercept = mediana_original, size = 1.1)
+# Estimador bootstrap de la desviación típica de la mediana
+sd_mediana <- sd(medianas_bootstrap)
+sd_mediana
+
+```
+
+
+#--------------------------------------------------------------------------------------------------------------------
+Tema 1: Intervalos de confianza Boostrap
+
+```{r}
+set.seed(100)
+# Parámetros
+R <- 1000
+n <- 30
+theta <- 1
+m <- 100
+alfa <- 0.05
+# Cálculo de los intervalos y % de aciertos
+acierto <- NULL
+intervalo <- NULL
+for (i in 1:m){
+  muestra_original <- rt(n, 1) + theta   
+  mediana_original <- median(muestra_original)
+  muestras_bootstrap <- sample(muestra_original, n*R, rep = TRUE)
+  muestras_bootstrap <- matrix(muestras_bootstrap, nrow = n)
+  medianas_bootstrap <- apply(muestras_bootstrap, 2, median)
+  T_bootstrap <- sqrt(n) * (medianas_bootstrap - mediana_original)
+  ic_min <- mediana_original -  quantile(T_bootstrap, 1-alfa/2)/sqrt(n)
+  ic_max  <- mediana_original -  quantile(T_bootstrap, alfa/2)/sqrt(n)
+  intervalo <- rbind(intervalo, c(ic_min, ic_max))
+  acierto <- c(acierto, ic_min < theta & ic_max > theta)
+}
+
+# Gráfico
+df <- data.frame(ic_min <- intervalo[,1],
+                 ic_max <- intervalo[, 2],
+                 ind = 1:m,
+                 acierto = acierto)
+ggplot(df) +
+  geom_linerange(aes(xmin = ic_min, xmax = ic_max, y = ind, col = acierto)) +
+  scale_color_hue(labels = c("NO", "SÍ")) +
+  geom_vline(aes(xintercept = theta), linetype = 2) +
+  theme_bw() +
+  labs(y = 'Muestras', x = 'Intervalos (nivel 0.95)',
+       title = 'IC (método bootstrap híbrido)')
+
+```
+
+
+#--------------------------------------------------------------------------------------------------------------------
+Tema 1: Correlación entre notas
+  
+  Notas en 2009 y 2010 de una prueba al final de primaria en 100 colegios de la Comunidad de Madrid:
+
+```{r}
+set.seed(100)
+n <- 100
+colegios <- read_table("http://verso.mat.uam.es/~joser.berrendero/datos/notas.txt", 
+                     locale = locale(decimal_mark = ",")) %>% 
+  mutate(tipo = factor(tipo)) %>% 
+  slice_sample(n = n)   # selecciona n colegios aleatoriamente
+head(colegios)
+```
+
+
+#--------------------------------------------------------------------------------------------------------------------
+Tema 1: Transformación de Fisher
+
+
+```{r}
+alpha <- 0.05  # 1 - nivel de confianza 
+datos_xy <- cbind(colegios$nota09, colegios$nota10)
+correlacion <- cor(datos_xy)[1,2]
+correlacion_fisherz <- 0.5 * log ((1+correlacion)/(1-correlacion)) 
+round(c(correlacion, correlacion_fisherz), 2)
+```
+
+
+#--------------------------------------------------------------------------------------------------------------------
+Tema 1: Ejemplo:
+
+  Representamos las distribuciones bootstrap de las correlaciones transformadas junto con la aproximación normal:
+
+```{r}
+R <- 1000     # número de remuestras
+corr_bootstrap <- replicate(R, cor(datos_xy[sample(1:n, n, rep=TRUE),])[1,2])
+corr_bootstrap_fisherz <- 0.5*log((1+corr_bootstrap)/(1-corr_bootstrap))
+df <- data.frame(corr_bootstrap, corr_bootstrap_fisherz)
+ggplot(df) +
+  geom_histogram(aes(x=corr_bootstrap_fisherz, y=..density..),
+                 fill='olivedrab4',
+                 col='black',
+                 bins = 20) +
+  labs(x = 'Correlaciones bootstrap transformadas', y = NULL) + 
+  geom_vline(xintercept = correlacion_fisherz, col = 'red') + 
+  geom_function(fun = dnorm,
+                args = list(mean=correlacion_fisherz, sd = 1/sqrt(n-3)),
+                size = 1.2) +
+  theme_bw()
+```
+
+
+#--------------------------------------------------------------------------------------------------------------------
+Tema 1: Ejemplo
+  
+  - Correlación entre la nota de 2009 y 2010 en los colegios de Madrid: 0.56
+  - IC basado en el percentil bootstrap
+  
+```{r}
+round(c(quantile(corr_bootstrap, alpha/2), quantile(corr_bootstrap, 1-alpha/2)), 2)
+```
+
+  - IC basado en la transformación z de Fisher
+
+```{r}
+IC_phi <- c(correlacion_fisherz - qnorm(1-alpha/2)/sqrt(n-3),
+            correlacion_fisherz + qnorm(1-alpha/2)/sqrt(n-3))
+IC_rho <- (exp(2*IC_phi) - 1) / (exp(2*IC_phi) + 1) 
+round(IC_rho, 2)
+```
+
+
+#--------------------------------------------------------------------------------------------------------------------
+#----- T - E - M - A : 2 ----------------------------------------------------------------------------------------
+#--------------------------------------------------------------------------------------------------------------------
+Tema 2: 
+
+```{r}
+
+```
+
+
+#--------------------------------------------------------------------------------------------------------------------
+Tema 2:
+
+```{r}
+
+```
+
+
+#--------------------------------------------------------------------------------------------------------------------
+Tema 2:
+
+```{r}
+
+```
+
+
+#--------------------------------------------------------------------------------------------------------------------
+Tema 2:
+
+```{r}
+
+```
+
+
+#--------------------------------------------------------------------------------------------------------------------
+Tema 2:
+
+```{r}
+
+```
+
+
+#--------------------------------------------------------------------------------------------------------------------
+Tema 2:
+
+```{r}
+
+```
+
+
+#--------------------------------------------------------------------------------------------------------------------
+Tema 2:
+
+```{r}
+
+```
+
+
+#--------------------------------------------------------------------------------------------------------------------
+Tema 2:
+
+```{r}
+
+```
+
+
+#--------------------------------------------------------------------------------------------------------------------
+#----- T - E - M - A : 3 ----------------------------------------------------------------------------------------
+#--------------------------------------------------------------------------------------------------------------------
+Tema 3: 
+

@@ -1,0 +1,3 @@
+"0","rm(list=ls()) "
+"0","library(knitr)"
+"0","opts_chunk$set(echo=TRUE, warning=FALSE, message=FALSE)"

@@ -1,0 +1,3 @@
+"0","# Incluir las coordenadas correspondientes, y ejecutar el trozo de código"
+"0","nw <- list(lat = 40.917577, lon = -74.259090)"
+"0","se <- list(lat = 40.477399, lon = -73.700272)"
