@@ -1,0 +1,60 @@
+Obligatorias
+
+		Optimización				- 	3
+		Procesamiento de informacion temporal	-	3
+		----- Total Créditos 36
+
+	Proyecto de Investigación		-	6
+		----- Total Créditos 42
+	
+		Proyecto Fin de Master			-	12
+		----- Total Créditos 54 
+Optativas
+
+	Aprendizage profundo imagen y video	-	3
+	Aprendizage profundo Biometrica 	-	3
+		----- Total Créditos 60
+
+	Procesamiento de Lenguaje Natural	-	3
+	Aprendizage profundo Señales de Audio	-	3
+		----- Total Créditos 66
+
+Otro Master
+
+	COMPUTACIÓN MÓVIL E INTELIGENCIA AMBIENTAL -    6
+		----- Total Créditos 72
+
+		SISTEMAS ADAPTATIVOS Y MODELADO DE USUARIO - 	6
+		----- Total Créditos 78
+
+	Desarrollo de Software Dirigido por Modelos -   6 - Primer Cuatri
+
+-----------------------------------------------------------------
+
+	Aprendizage profundo imagen y video	-	3
+	Aprendizage profundo señal y audio 	-	3
+	Aprendizage profundo Biometrica 	-	3
+	Procesamiento de lenguaje Natural 	-	3
+
+	Neuroinformatica 			-	6
+	Información Estructurada		-	3
+	Metodos Funcionales en AA		-	3
+	Aprendizaje por Refuerzo 		-	3
+	
+	Métodos Bayesianos			-	3
+
+	Trabajo de Fin de Master 		-	12
+
+ASIGNATURAS MI&S
+
+	PROCESAMIENTO DE IMÁGENES BIOMÉDICAS 	-	6
+	INTERACCIÓN PERSONA-ORDENADOR		-	6
+	REDES SOCIALES, COLABORACIÓN EN RED	-	6
+	SISTEMAS ADAPTATIVOS Y MODELADO DE 	-	6
+	COMPUTACIÓN Movil E Inteligenia Ambient - 	6
+	ANÁLISIS DE SECUENCIAS DE VIDEO APLICADO-	6
+	DETECCIÓN DE PERSONAS Y BIOMÉTRICO	-	6
+	VISIÓN ARTIFICIAL CON MÚLTIPLES CÁMARAS -	6
+
+
+	
